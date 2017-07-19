@@ -1,3 +1,4 @@
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HTMLWebpackPlugin = require('html-webpack-plugin');
 var HTMLWebpackPluginConfig = new HTMLWebpackPlugin({
   template: __dirname + '/app/index.html',
@@ -6,19 +7,35 @@ var HTMLWebpackPluginConfig = new HTMLWebpackPlugin({
 });
 
 module.exports = {
-  entry: __dirname + '/app/index.js',
+  entry: [__dirname + '/app/index.js', __dirname + '/app/styles/main.scss'],
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader'
+        use: 'babel-loader'
+      },
+      { // regular css files
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+          use: 'css-loader?importLoaders=1',
+        }),
+      },
+      { // sass / scss loader for webpack
+        test: /\.(sass|scss)$/,
+        use: ExtractTextPlugin.extract(['css-loader', 'sass-loader'])
       }
     ]
   },
   output: {
-    filename: 'transformed.js',
+    filename: 'script/all.js',
     path: __dirname + '/build'
   },
-  plugins: [HTMLWebpackPluginConfig]
+  plugins: [
+    HTMLWebpackPluginConfig,
+    new ExtractTextPlugin({ // define where to save the file
+      filename: 'style/[name].css',
+      allChunks: true,
+    }),
+  ]
 };

@@ -4,20 +4,25 @@
   "description": "testing react",
   "main": "index.js",
   "scripts": {
-    "test": "echo Error: no test specified && exit 1",
-    "build": "webpack",
+    "test": "echo \"Error: no test specified\"",
+    "build": "rm -rf build && webpack",
     "start": "webpack-dev-server"
   },
   "author": "ana",
   "license": "ISC",
   "dependencies": {
+    "css-loader": "^0.28.4",
+    "node-sass": "^4.5.3",
     "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "react-dom": "^15.6.1",
+    "react-tap-event-plugin": "^2.0.1",
+    "sass-loader": "^6.0.6"
   },
   "devDependencies": {
     "babel-core": "^6.25.0",
     "babel-loader": "^7.1.1",
     "babel-preset-react": "^6.24.1",
+    "extract-text-webpack-plugin": "^3.0.0-rc.1",
     "gulp-slim": "^0.3.0",
     "html-webpack-plugin": "^2.29.0",
     "webpack": "^3.3.0",
