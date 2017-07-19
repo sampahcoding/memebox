@@ -1,0 +1,26 @@
+{
+  "name": "smallreact",
+  "version": "1.0.0",
+  "description": "testing react",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo Error: no test specified && exit 1",
+    "build": "webpack",
+    "start": "webpack-dev-server"
+  },
+  "author": "ana",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-preset-react": "^6.24.1",
+    "gulp-slim": "^0.3.0",
+    "html-webpack-plugin": "^2.29.0",
+    "webpack": "^3.3.0",
+    "webpack-dev-server": "^2.5.1"
+  }
+}
