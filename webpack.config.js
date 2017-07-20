@@ -6,7 +6,7 @@ var HTMLWebpackPluginConfig = new HTMLWebpackPlugin({
     inject: 'body'
   });
 var StylesheetsPlugin = new ExtractTextPlugin({ // define where to save the file
-    filename: 'assets/stylesheets/[name].css',
+    filename: 'assets/stylesheets/all.css',
     allChunks: true,
   });
 
@@ -37,9 +37,6 @@ module.exports = {
   },
   plugins: [
     HTMLWebpackPluginConfig,
-    new ExtractTextPlugin({ // define where to save the file
-      filename: 'assets/stylesheets/[name].css',
-      allChunks: true,
-    }),
+    StylesheetsPlugin
   ]
 };

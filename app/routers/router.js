@@ -8,7 +8,6 @@ export default Backbone.Router.extend({
   routes: {
     '': 'home',
     'main_app_part': 'mainAppPart',
-    'dashboard': 'dashboard',
     'heavy(/:heavy_param)': 'heavy',
     '*handleMissingRoute': 'handle404',
   },
@@ -17,17 +16,6 @@ export default Backbone.Router.extend({
     var element = <div>
                       <h1>Hello, This is homepage</h1>
                       <App name="Ana" />
-                    </div>;
-    ReactDOM.render(
-      element,
-      document.getElementById('content')
-    );
-  },
-
-  dashboard() {
-    var element = <div>
-                      <h1>Hello, Ana</h1>
-                      <p>This is dashboard page</p>
                     </div>;
     ReactDOM.render(
       element,
