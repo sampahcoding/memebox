@@ -11,7 +11,7 @@ var StylesheetsPlugin = new ExtractTextPlugin({ // define where to save the file
   });
 
 module.exports = {
-  entry: [__dirname + '/app/page/homepage/index.js', __dirname + '/assets/stylesheets/all.css'],
+  entry: [__dirname + '/app/page/homepage/index.js', __dirname + '/app/assets/stylesheets/main.scss'],
   module: {
     rules: [
       {
@@ -28,11 +28,15 @@ module.exports = {
       { // sass / scss loader for webpack
         test: /\.(sass|scss)$/,
         use: ExtractTextPlugin.extract(['css-loader', 'sass-loader'])
+      },
+      {
+        test: /\.scss/,
+        loader: 'import-glob-loader'
       }
     ]
   },
   output: {
-    filename: 'script/all.js',
+    filename: 'script/[hash]/[name].js',
     path: __dirname + '/build'
   },
   plugins: [
