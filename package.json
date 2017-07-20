@@ -2,15 +2,16 @@
   "name": "smallreact",
   "version": "1.0.0",
   "description": "testing react",
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\"",
-    "build": "rm -rf styles && gulp sass && rm -rf build && webpack",
+    "build": "rm -rf assets && gulp sass && rm -rf build && webpack",
     "start": "webpack-dev-server"
   },
   "author": "ana",
   "license": "ISC",
   "dependencies": {
+    "backbone": "^1.3.3",
     "css-loader": "^0.28.4",
     "node-sass": "^4.5.3",
     "react": "^15.6.1",
@@ -28,6 +29,7 @@
     "gulp-sass": "^3.1.0",
     "gulp-slim": "^0.3.0",
     "html-webpack-plugin": "^2.29.0",
+    "jquery": "^3.2.1",
     "webpack": "^3.3.0",
     "webpack-dev-server": "^2.5.1"
   }

@@ -1,13 +1,17 @@
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HTMLWebpackPlugin = require('html-webpack-plugin');
 var HTMLWebpackPluginConfig = new HTMLWebpackPlugin({
-  template: __dirname + '/app/index.html',
-  filename: 'index.html',
-  inject: 'body'
-});
+    template: __dirname + '/app/page/homepage/index.html',
+    filename: 'index.html',
+    inject: 'body'
+  });
+var StylesheetsPlugin = new ExtractTextPlugin({ // define where to save the file
+    filename: 'assets/stylesheets/[name].css',
+    allChunks: true,
+  });
 
 module.exports = {
-  entry: [__dirname + '/app/index.js', __dirname + '/styles/all.css'],
+  entry: [__dirname + '/app/page/homepage/index.js', __dirname + '/assets/stylesheets/all.css'],
   module: {
     rules: [
       {
@@ -34,7 +38,7 @@ module.exports = {
   plugins: [
     HTMLWebpackPluginConfig,
     new ExtractTextPlugin({ // define where to save the file
-      filename: 'style/[name].css',
+      filename: 'assets/stylesheets/[name].css',
       allChunks: true,
     }),
   ]
