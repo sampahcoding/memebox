@@ -1,5 +1,6 @@
 @import "_bourbon/bourbon";
 @import "_neat/neat";
+@import "base/**/*";
 
 html{
   min-height: 100%;
@@ -8,15 +9,6 @@ html{
 body{
   height: 100%;
   margin: 0;
-}
-
-h1 {
-  font-size: 16pt;
-  @include padding(20vh null 10px 3em);
-}
-
-h2 {
-  font-size: 14pt;
 }
 
 @import "components/**/*";
