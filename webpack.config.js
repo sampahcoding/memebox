@@ -53,5 +53,8 @@ module.exports = {
   plugins: [
     HTMLWebpackPluginConfig,
     StylesheetsPlugin
-  ]
+  ],
+  devServer: {
+    port: 8080
+  }
 };
