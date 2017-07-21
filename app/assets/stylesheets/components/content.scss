@@ -9,3 +9,11 @@
     margin:0;
   }
 }
+
+.clearfix {
+  @include clearfix;
+}
+
+.default-neat-grid {
+  @include fill-parent;
+}

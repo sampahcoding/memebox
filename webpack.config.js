@@ -11,7 +11,7 @@ var StylesheetsPlugin = new ExtractTextPlugin({ // define where to save the file
   });
 
 module.exports = {
-  entry: [__dirname + '/app/page/homepage/index.js', __dirname + '/app/assets/stylesheets/main.scss'],
+  entry: [__dirname + '/app/page/homepage/index.js', __dirname + '/app/assets/stylesheets/application.scss'],
   module: {
     rules: [
       {
