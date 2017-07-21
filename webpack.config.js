@@ -38,7 +38,7 @@ module.exports = {
         loader: "url-loader?limit=10000&mimetype=application/font-woff"
       },
       {
-        test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2|json|xml|ico)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         loader: "file-loader",
         options: {
           publicPath: 'http://localhost:8080/'
