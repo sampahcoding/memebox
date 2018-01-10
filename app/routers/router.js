@@ -1,8 +1,8 @@
 import Backbone from 'backbone';
 import $ from 'jquery';
-var React = require("react");
-var ReactDOM = require("react-dom");
-var App = require("../components/App").default;
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from '../components/App';
 
 export default Backbone.Router.extend({
   routes: {
@@ -13,10 +13,8 @@ export default Backbone.Router.extend({
   },
 
   home() {
-    var element = <div>
-                      <h1>Hello, This is homepage</h1>
-                      <App name="Ana" />
-                    </div>;
+    var element =  <App name="Anas" />;
+
     ReactDOM.render(
       element,
       document.getElementById('content')

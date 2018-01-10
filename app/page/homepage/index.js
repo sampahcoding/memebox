@@ -1,7 +1,8 @@
 import Backbone from 'backbone';
 import $ from 'jquery';
 import Router from '../../routers/router';
-var DashboardApp = require("../dashboard/index").default;
+import DashboardApp from '../dashboard/index';
+import TestApp from '../test/index';
 // add this to admin application
 //require('bootstrap/dist/css/bootstrap.css');
 
@@ -12,5 +13,6 @@ $(() => {
   //   new DashboardApp();
   // });
   new DashboardApp();
+  new TestApp();
   Backbone.history.start();
 });
